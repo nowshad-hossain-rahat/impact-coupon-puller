@@ -1,0 +1,22 @@
+{
+    "name": "nowshad/impact-coupon-puller",
+    "description": "This plugin will pull coupons from impact using API",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Nowshad\\ImpactCouponPuller\\": "api/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nowshad-hossain-rahat",
+            "email": "nowshad.hossain.rahat@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "scripts": {
+        "test": "php main.php"
+    }
+}

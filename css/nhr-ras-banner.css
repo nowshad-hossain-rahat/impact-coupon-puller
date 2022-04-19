@@ -1,0 +1,449 @@
+* {
+    box-sizing: border-box;
+}
+
+#nhr-ras-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 200, 0.85);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: sans-serif;
+    z-index: 9999;
+    transition: 0.7s;
+}
+
+#nhr-ras-banner.hideBanner {
+    bottom: -120%;
+}
+
+#nhr-ras-banner .title {
+    font-size: 25px;
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: #eee;
+    text-align: center;
+}
+
+#nhr-ras-banner .btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid yellow;
+    border-radius: 25px;
+    background: yellow;
+    color: #333;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#nhr-ras-banner #order-now {
+    animation: animateOrderBtn 0.8s infinite linear;
+}
+
+@keyframes animateOrderBtn {
+    
+    0% {
+        transform: scale(1);
+    }
+    
+    50% {
+        transform: scale(0.9);
+    }
+    
+}
+
+#nhr-ras-banner #order-now:hover {
+    animation: shake 0.2s infinite linear;
+}
+
+
+@keyframes shake {
+    
+    100% {
+        transform: rotateZ(0deg)
+    }
+    
+    40% {
+        transform: rotateZ(3deg);
+    }
+    
+    90% {
+        transform: rotateZ(-3deg);
+    }
+    
+}
+
+
+.nhr-popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.2);
+    z-index: 99999;
+    padding: 15px;
+    border-radius: 10px;
+    width: 80%;
+    min-width: 200px;
+    max-height: calc(100% - 70px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: fixed;
+    top: 30px;
+    left: 10%;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    font-family: sans-serif;
+}
+
+.nhr-popup.showOffer {
+    top: 50px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.nhr-popup.specialClass {
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow-y: hidden;
+    padding-bottom: 15px;
+}
+
+.nhr-popup:before {
+    content: '';
+    position: absolute;
+    top: -250px;
+    right: -250px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(transparent, #0077ee);
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.nhr-popup:after {
+    content: '';
+    position: absolute;
+    top: -150px;
+    left: -150px;
+    width: 300px;
+    height: 300px;
+    background: transparent;
+    border: 20px solid #0077ee;
+    transform: rotate(60deg);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.nhr-popup #close-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    background: firebrick;
+    padding: 8px 15px;
+    border-radius: 10px 0 10px 0;
+    color: #eee;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.nhr-popup #close-popup:hover {
+    background: #333;
+}
+
+.nhr-popup #close-popup:before {
+    content: '';
+    position: absolute;
+    top: 100px;
+    left: 220px;
+    width: 200px;
+    height: 200px;
+    background: transparent;
+    border-radius: 50%;
+    border: 20px solid #0077ee;
+    transform: rotate(120deg);
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.nhr-popup table {
+    width: 100%;
+    background: #fff;
+    margin: 15px 0 0 0;
+    border-color: #999;
+    overflow: scroll;
+}
+
+.nhr-popup table thead th {
+    text-align: center;
+}
+
+.nhr-popup table th,
+.nhr-popup table td {
+    padding: 10px 15px;
+    border-color: #999;
+    text-align: left;
+    font-size: 15px;
+    color: #222;
+    overflow: scroll;
+}
+
+.nhr-popup.specialClass .heading {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#nhr-ras-order-form-container .heading {
+    font-size: 22px;
+    color: #222;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    padding: 0;
+    border: none;
+    margin: 25px 0 10px 0;
+    max-width: 85%;
+    text-align: center;
+    line-height: 30px;
+    text-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+#nhr-ras-order-form-container .heading span {
+    color: #ee2e5b;
+}
+
+#nhr-ras-order-form-container .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: 0.3s;
+}
+
+#nhr-ras-order-form-container .col {
+    width: auto;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 10px;
+    
+}
+
+#nhr-ras-order-form-container .col.left {
+    padding: 0;
+}
+
+#nhr-ras-order-form-container .col #nhr-ras-order-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+#nhr-ras-order-form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #aaa;
+    color: #222;
+    flex-shrink: 1;
+}
+
+#nhr-ras-order-form .inline-btns {
+    margin: 0;
+    padding: 15px 0 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#nhr-ras-order-form .inline-btns button {
+    padding: 10px 15px;
+    margin: 0;
+    font-size: 15px;
+    border-radius: 10px;
+    background: #0077ee;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+#nhr-ras-order-form .inline-btns button:first-child {
+    background: #f9bd0b;
+    color: black;
+}
+
+#nhr-ras-order-form .inline-btns button:hover {
+    background: #333;
+    color: #fff;
+}
+
+#nhr-ras-order-form .inline-btns button:disabled {
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    cursor: not-allowed;
+}
+
+#nhr-ras-order-form-container #error-msg {
+    transition: 0.3s;
+    padding: 0;
+    margin: 15px 0 0 0;
+    text-align: center;
+    width: 100%;
+    line-break: break-all;
+    color: firebrick;
+    background: transparent;
+}
+
+#nhr-ras-order-form-container .right {
+    margin-left: 20px;
+    background: #0077ee;
+    padding: 15px;
+    padding-left: 25px;
+}
+
+#nhr-ras-order-form-container .right ul {
+    margin: 0;
+    padding: 0;
+    color: #eee;
+    list-style-type: square;
+}
+
+#nhr-ras-order-form-container .right ul li {
+    margin: 0 0 10px 0;
+    font-family: Sans;
+    font-size: 17px;
+    border-bottom: 1px dashed #eee;
+    padding: 0 0 10px 0;
+}
+
+#nhr-ras-order-form-container .right ul li:last-child {
+    margin: 0;
+    border: none;
+}
+
+#nhr-ras-order-form-container p {
+    font-size: 15px;
+    padding: 10px 10px;
+    margin: 0;
+    background: rgba(220, 5, 50, 0.5);
+    border-radius: 10px;
+    color: #222;
+    text-align: center;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+
+
+#nhr-ras-iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999999999999999999;
+    border: none;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: 0ms;
+    display: none;
+}
+
+#nhr-ras-iframe.overlay {
+    display: block;
+}
+
+
+@media screen and (max-width: 860px){
+    
+    #nhr-ras-order-form-container .content {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    #nhr-ras-order-form-container .content .col {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+}
+
+@media screen and (max-width: 400px){
+    
+    .nhr-popup.specialClass {
+        width: 90%;
+    }
+    
+    .nhr-popup.specialClass .content {
+        overflow-x: scroll;
+        width: calc(100% - 10px);
+    }
+    
+    #nhr-ras-order-form-container {
+        width: 90%;
+        left: 5%;
+    }
+    
+    #nhr-ras-order-form .inline-btns {
+        padding-top: 0;
+        justify-content: center;
+    }
+    
+    #nhr-ras-order-form .inline-btns button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .nhr-popup:before {
+        content: '';
+        position: absolute;
+        top: -150px;
+        right: -150px;
+        width: 300px;
+        height: 300px;
+    }
+    
+    .nhr-popup:after {
+        top: -100px;
+        right: -100px;
+        width: 200px;
+        height: 200px;
+    }
+    
+    .nhr-popup #close-popup:before {
+        top: 150px;
+        left: 20px;
+        transform: scale(0.8)
+    }
+    
+}
+
+
